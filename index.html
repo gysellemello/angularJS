@@ -4,6 +4,20 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     </head>
     <body>
-        
+        <div ng-controller="todolist">
+            <span>Items: {{todos.length}}</span>
+            <ul>
+                <li ng-repeat="todo in todos">
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="todo.done">
+                            <span class="done-{{todo.done}}">{{tode.text}}</span>
+                    </label>
+                </li>
+            </ul>
+            <form ng-submit="addTodo()">
+                <input type="text" ng-model="todoText" size="30" placeholder="add new todo here">
+                <input type="submit" value="add">
+            </form>
+        </div>
     </body>
 </html>
